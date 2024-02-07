@@ -18,7 +18,7 @@ function BOView() {
     generatePropertyList();
   }, []);
   function generateBookingList() {
-    fetch("http://localhost:3000/booking")
+    fetch("http://localhost:8000/booking")
       .then((response) => response.json())
       .then((data) => {
         setBookingList(data);
@@ -26,14 +26,14 @@ function BOView() {
   }
 
   function generatePropertyList() {
-    fetch("http://localhost:3000/property")
+    fetch("http://localhost:8000/property")
       .then((response) => response.json())
       .then((data) => {
         setPropertyList(data);
       });
   }
   function generateBuyerList() {
-    fetch("http://localhost:3000/buyer")
+    fetch("http://localhost:8000/buyer")
       .then((response) => response.json())
       .then((data) => {
         setBuyerList(data);
@@ -62,7 +62,7 @@ function BOView() {
     alert("Are you sure you want to delete this booking?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:3000/booking/${props.id}`, {
+      fetch(`http://localhost:8000/booking/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ function BOView() {
                 }}
               >
                 {" "}
-               Add Booking
+                Add Booking
               </Link>
             </div>
           </div>
@@ -103,43 +103,43 @@ function BOView() {
           {bookingList.map((booking) => {
             return (
               <div className="col-md-4 mb-4 col-md-offset-3">
-              <ul className="mx-2 boviewsBoarderRadius">
-                <div className="">
-                  <img
-                    src={
-                      imageList[Math.floor(Math.random() * imageList.length)]
-                        .url
-                    }
-                    alt={booking.firstName}
-                    className="cardImg"
-                  />
-                </div>
-                <li className="mx-3">
-                  <b>Property Buyer:</b> {getbuyername(booking.buyerId)}
-                </li>
-                <li className="mx-3">
-                  <b>Property Address:</b> {getpropertyname(booking.propertyId)}
-                </li>
-                <li className="mx-3">
-                  <b>Booking Time:</b> {dateConverter(booking.time)}
-                </li>
-                <div className="d-flex justify-content-center pb-4">
-                <button
-                  className="btn btn-danger mx-2"
-                  type="button"
-                  onClick={() => DeleteFromList(booking)}
-                >Delete</button>
-                   <Link
-                    className="btn btn-warning text-white"
-                    to={`/BOEdit/${booking.id}`}
-                    state={{ buyers: buyerList, properties: propertyList }}
-                  >
-                    Edit
-                  </Link>
-                
-                </div>
-               
-              </ul>
+                <ul className="mx-2 boviewsBoarderRadius">
+                  <div className="">
+                    <img
+                      src={
+                        imageList[Math.floor(Math.random() * imageList.length)]
+                          .url
+                      }
+                      alt={booking.firstName}
+                      className="cardImg"
+                    />
+                  </div>
+                  <li className="mx-3">
+                    <b>Property Buyer:</b> {getbuyername(booking.buyerId)}
+                  </li>
+                  <li className="mx-3">
+                    <b>Property Address:</b> {getpropertyname(booking.propertyId)}
+                  </li>
+                  <li className="mx-3">
+                    <b>Booking Time:</b> {dateConverter(booking.time)}
+                  </li>
+                  <div className="d-flex justify-content-center pb-4">
+                    <button
+                      className="btn btn-danger mx-2"
+                      type="button"
+                      onClick={() => DeleteFromList(booking)}
+                    >Delete</button>
+                    <Link
+                      className="btn btn-warning text-white"
+                      to={`/BOEdit/${booking.id}`}
+                      state={{ buyers: buyerList, properties: propertyList }}
+                    >
+                      Edit
+                    </Link>
+
+                  </div>
+
+                </ul>
               </div>
             );
           })}

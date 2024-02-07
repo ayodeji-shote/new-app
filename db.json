@@ -236,6 +236,7 @@
   "property": [
     {
       "id": 1,
+      "type": "SEMI",
       "address": "34 OK Place, OK Town",
       "postcode": "OK1 1OK",
       "price": "100000",

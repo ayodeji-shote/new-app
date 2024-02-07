@@ -23,7 +23,7 @@ function Main(){
         <div className='Navigation'>
         <h1> <BsFillHousesFill /> QA Virtual Agents</h1>
         <Link to="View">View Seller</Link>
-        <Link to="BView">View Buyer</Link>
+        <Link data-cy = "buyerview" to="BView">View Buyer</Link>
         <Link to="PView">View Property</Link>
         <Link to="BOView">View Booking</Link>
         </div>

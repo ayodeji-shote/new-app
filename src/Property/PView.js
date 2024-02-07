@@ -9,7 +9,7 @@ function PView() {
     generatePropertyList();
   }, []);
   function generatePropertyList() {
-    fetch("http://localhost:3000/property")
+    fetch("http://localhost:8000/property")
       .then((response) => response.json())
       .then((data) => {
         setPropertyList(data);
@@ -19,7 +19,7 @@ function PView() {
     alert("Are you sure you want to delete this property?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:3000/property/${props.id}`, {
+      fetch(`http://localhost:8000/property/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -100,6 +100,9 @@ function PView() {
                 />
               </div>
               <li>
+                <b>Type:</b> {property.type}
+              </li>
+              <li>
                 <b>Address:</b> {property.address}
               </li>
               <li>
@@ -122,15 +125,14 @@ function PView() {
               <li>
                 <b>Status:</b>{" "}
                 <span
-                  className={`${
-                    property.status === "FOR SALE"
+                  className={`${property.status === "FOR SALE"
                       ? "bg-success"
                       : property.status === "WITHDRAWN"
-                      ? "bg-primary"
-                      : property.status === "SOLD"
-                      ? "bg-danger"
-                      : ""
-                  } text-white py-1 px-2 rounded`}
+                        ? "bg-primary"
+                        : property.status === "SOLD"
+                          ? "bg-danger"
+                          : ""
+                    } text-white py-1 px-2 rounded`}
                 >
                   {" "}
                   {property.status}{" "}
