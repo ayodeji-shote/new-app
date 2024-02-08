@@ -9,7 +9,7 @@ function BView() {
     fetch("http://localhost:8000/buyer")
       .then((response) => response.json())
       .then((data) => {
-        setBuyerList(data);
+        setBuyerList([data]);
       });
   }, []);
 
@@ -17,7 +17,7 @@ function BView() {
     fetch("http://localhost:8000/buyer")
       .then((response) => response.json())
       .then((data) => {
-        setBuyerList(data);
+        setBuyerList([data]);
       });
   }
 
