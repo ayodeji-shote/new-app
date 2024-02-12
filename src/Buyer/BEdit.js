@@ -19,7 +19,7 @@ function BEdit() {
             phone: inputphone.current.value
         }
 
-        fetch(`http://localhost:8000/buyer/${id}`, {
+        fetch(`http://localhost:3001/buyer/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ function BEdit() {
 
     function getBuyer() {
 
-        fetch(`http://localhost:8000/buyer/${id}`)
+        fetch(`http://localhost:3001/buyer/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 inputfname.current.value = data.firstName;

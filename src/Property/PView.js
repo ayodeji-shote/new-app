@@ -9,7 +9,7 @@ function PView() {
     generatePropertyList();
   }, []);
   function generatePropertyList() {
-    fetch("http://localhost:8000/property")
+    fetch("http://localhost:3001/property")
       .then((response) => response.json())
       .then((data) => {
         setPropertyList(data);
@@ -19,7 +19,7 @@ function PView() {
     alert("Are you sure you want to delete this property?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:8000/property/${props.id}`, {
+      fetch(`http://localhost:3001/property/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function PView() {
     );
   }
   return (
-    <div className="pView">
+    <div className="pView" data-cy ="Property">
       <PForm
         searchHandler={searchHandler}
         generatePropertyList={generatePropertyList}

@@ -25,7 +25,7 @@ function PAdd() {
     }
   }
   function getsellerid() {
-    fetch("http://localhost:8000/seller")
+    fetch("http://localhost:3001/seller")
       .then((response) => response.json())
       .then((data) => {
         setsellerid(data);
@@ -81,7 +81,7 @@ function PAdd() {
       status: document.getElementById('PropertyStatus').value,
       sellerId: idchecker()
     }
-    fetch('http://localhost:8000/property', {
+    fetch('http://localhost:3001/property', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

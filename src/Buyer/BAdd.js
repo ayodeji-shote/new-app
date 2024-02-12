@@ -14,7 +14,7 @@ function BAdd() {
             postcode: document.getElementById('Buyerpostcode').value,
             phone: document.getElementById('Buyerphone').value
         }
-        fetch('http://localhost:8000/buyer', {
+        fetch('http://localhost:3001/buyer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

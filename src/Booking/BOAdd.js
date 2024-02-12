@@ -22,7 +22,7 @@ function BOAdd() {
         propertyId: Number(document.getElementById('PropertyID').value),
         time: bookingdate.toISOString()
       }
-      fetch('http://localhost:8000/booking', {
+      fetch('http://localhost:3001/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

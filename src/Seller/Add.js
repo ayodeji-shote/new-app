@@ -14,7 +14,7 @@ function Add() {
             postcode: document.getElementById('sellerpostcode').value,
             phone: document.getElementById('sellerphone').value
         }
-        fetch('http://localhost:8000/seller', {
+        fetch('http://localhost:3001/seller', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

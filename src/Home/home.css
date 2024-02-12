@@ -1,0 +1,88 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+   
+  /* Style header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+   
+  header h1 {
+    font-size: 24px;
+  }
+   
+  nav ul {
+    list-style-type: none;
+  }
+   
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+   
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+   
+  /* Style main content */
+  main {
+    padding: 20px;
+  }
+   
+  .featured-properties {
+    margin-bottom: 40px;
+  }
+   
+  .featured-properties h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+   
+  .property-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+   
+  .property {
+    width: calc(50% - 20px);
+    margin: 0 10px 20px 0;
+  }
+   
+  .property img {
+    width: 100%;
+    height: auto;
+  }
+   
+  .property h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+   
+  .property p {
+    font-size: 14px;
+    color: #666;
+  }
+   
+  .about-us {
+    margin-bottom: 40px;
+  }
+   
+  .about-us h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+   
+  /* Style footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  

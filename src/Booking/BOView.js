@@ -18,7 +18,7 @@ function BOView() {
     generatePropertyList();
   }, []);
   function generateBookingList() {
-    fetch("http://localhost:8000/booking")
+    fetch("http://localhost:3001/booking")
       .then((response) => response.json())
       .then((data) => {
         setBookingList(data);
@@ -26,14 +26,14 @@ function BOView() {
   }
 
   function generatePropertyList() {
-    fetch("http://localhost:8000/property")
+    fetch("http://localhost:3001/property")
       .then((response) => response.json())
       .then((data) => {
         setPropertyList(data);
       });
   }
   function generateBuyerList() {
-    fetch("http://localhost:8000/buyer")
+    fetch("http://localhost:3001/buyer")
       .then((response) => response.json())
       .then((data) => {
         setBuyerList(data);
@@ -62,7 +62,7 @@ function BOView() {
     alert("Are you sure you want to delete this booking?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:8000/booking/${props.id}`, {
+      fetch(`http://localhost:3001/booking/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ function BOView() {
     }
   }
   return (
-    <div className="container BOViews">
+    <div className="container BOViews" data-cy="Booking">
       <h1>Bookings</h1>
       <ul>
         <div className="container">

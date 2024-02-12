@@ -21,7 +21,7 @@ function BOEdit() {
       propertyId: Number(inputpropertyid.current.value),
       time: inputdate.current.value
     }
-    fetch(`http://localhost:8000/booking/${id}`, {
+    fetch(`http://localhost:3001/booking/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function BOEdit() {
     }).then(response => (navigate(`/BOView`)))
   }
   function getBooking() {
-    fetch(`http://localhost:8000/booking/${id}`)
+    fetch(`http://localhost:3001/booking/${id}`)
       .then((response) => response.json())
       .then((data) => {
         inputbuyerid.current.value = data.buyerId;

@@ -20,7 +20,7 @@ function Edit() {
             phone: inputphone.current.value
         }
 
-        fetch(`http://localhost:8000/seller/${id}`, {
+        fetch(`http://localhost:3001/seller/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Edit() {
 
     function getSeller() {
 
-        fetch(`http://localhost:8000/seller/${id}`)
+        fetch(`http://localhost:3001/seller/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 inputfname.current.value = data.firstName;

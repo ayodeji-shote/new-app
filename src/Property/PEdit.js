@@ -26,7 +26,7 @@ function PEdit() {
             bathroom: inputbathrooms.current.value,
             garden: gardenchecker()
         }
-        fetch(`http://localhost:8000/property/${id}`, {
+        fetch(`http://localhost:3001/property/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ function PEdit() {
         }).then(response => (navigate(`/PView`)))
     }
     function getbuyerid() {
-        fetch("http://localhost:8000/buyer")
+        fetch("http://localhost:3001/buyer")
             .then((response) => response.json())
             .then((data) => {
                 setBuyerid(data);
@@ -44,7 +44,7 @@ function PEdit() {
     useEffect(() => { getbuyerid() }, []);
     function getProperty() {
 
-        fetch(`http://localhost:8000/property/${id}`)
+        fetch(`http://localhost:3001/property/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 inputtype.current.value = data.type;

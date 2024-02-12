@@ -9,7 +9,7 @@ function View() {
   }, []);
 
   function generateSellerList() {
-    fetch("http://localhost:8000/seller")
+    fetch("http://localhost:3001/seller")
       .then((response) => response.json())
       .then((data) => {
         setSellerList(data);
@@ -20,7 +20,7 @@ function View() {
     alert("Are you sure you want to delete this seller?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:8000/seller/${props.id}`, {
+      fetch(`http://localhost:3001/seller/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function View() {
   }
 
   return (
-    <div className=" container sViews">
+    <div className=" container sViews" data-cy="SellerFirstName">
       <h1>Sellers</h1>
       <ul>
         <div class="container">

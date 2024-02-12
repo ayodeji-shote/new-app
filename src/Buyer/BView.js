@@ -1,38 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useReducer, useEffect } from "react";
 import "./BView.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { imageList } from "./Images";
-function BView() {
-  let [buyerList, setBuyerList] = useState([]);
 
+function BView() {
+  let buyerli = [];
+
+  // function generateBuyerList() {
+  //   fetch("http://localhost:3001/buyer")
+
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setBuyerList([data]);
+  //     });
+  // }
+  const buyerListReducer = (state, action) => {
+switch (action.type) {
+case "SET":
+  return action.payload;
+  default:
+    return state;
+
+}
+  };
+  let [buyerList, setBuyerList] = useReducer(buyerListReducer,[]);
   useEffect(() => {
-    fetch("http://localhost:8000/buyer")
+    fetch("http://localhost:3001/buyer")
       .then((response) => response.json())
       .then((data) => {
-        setBuyerList([data]);
+        setBuyerList({type:"SET", payload: data});
       });
   }, []);
-
-  function generateBuyerList() {
-    fetch("http://localhost:8000/buyer")
-      .then((response) => response.json())
-      .then((data) => {
-        setBuyerList([data]);
-      });
-  }
-
   function DeleteFromList(props) {
     alert("Are you sure you want to delete this buyer?");
     let choice = prompt("Yes or No");
     if (choice === "yes") {
-      fetch(`http://localhost:8000/buyer/${props.id}`, {
+      fetch(`http://localhost:3001/buyer/${props.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: props }),
       }).then((response) => response.json());
-      generateBuyerList();
+      // generateBuyerList();
     }
     else if (choice === "no") {
       alert("Buyer not deleted")
@@ -41,14 +51,17 @@ function BView() {
       alert("Invalid input")
     }
   }
-
   return (
-    <div className="container BView" data-cy="FirstName">
+
+    <div className="container BView" data-cy="BuyerFirstName">
+      { }
       <h1>Buyers</h1>
-      <ul>
-        <div class="container">
-          <div class="row">
-            <div class="col text-center">
+      
+      {console.log(buyerli)}
+      <ul data-cy="buyerDetails">
+        <div className="container">
+          <div className="row">
+            <div className="col text-center">
               <Link
                 className="btn btn-success my-4 text-center mx-auto"
                 to={`/BAdd`}
