@@ -1,0 +1,98 @@
+[
+    {
+        "id": 2,
+        "buyerId": 2,
+        "propertyId": 1,
+        "time": "2023-12-17"
+    },
+    {
+        "id": 3,
+        "buyerId": 2,
+        "propertyId": 3,
+        "time": "2023-12-29"
+    },
+    {
+        "id": 4,
+        "buyerId": 3,
+        "propertyId": 1,
+        "time": "2023-12-17"
+    },
+    {
+        "buyerId": 4,
+        "propertyId": 5,
+        "time": "2023-03-03T15:45:00.012Z",
+        "id": 5
+    },
+    {
+        "buyerId": 5,
+        "propertyId": 8,
+        "time": "2023-03-04T09:00:00.030Z",
+        "id": 6
+    },
+    {
+        "buyerId": 6,
+        "propertyId": 10,
+        "time": "2023-03-05T11:30:00.018Z",
+        "id": 7
+    },
+    {
+        "buyerId": 7,
+        "propertyId": 12,
+        "time": "2023-03-06T14:45:00.025Z",
+        "id": 8
+    },
+    {
+        "buyerId": 8,
+        "propertyId": 13,
+        "time": "2023-03-07T16:30:00.027Z",
+        "id": 9
+    },
+    {
+        "buyerId": 9,
+        "propertyId": 7,
+        "time": "2023-03-08T12:00:00.035Z",
+        "id": 10
+    },
+    {
+        "buyerId": 10,
+        "propertyId": 11,
+        "time": "2023-03-09T09:15:00.040Z",
+        "id": 11
+    },
+    {
+        "buyerId": 11,
+        "propertyId": 13,
+        "time": "2023-03-10T17:00:00.015Z",
+        "id": 12
+    },
+    {
+        "buyerId": 12,
+        "propertyId": 4,
+        "time": "2023-03-11T08:45:00.032Z",
+        "id": 13
+    },
+    {
+        "buyerId": 13,
+        "propertyId": 6,
+        "time": "2023-03-12T10:00:00.028Z",
+        "id": 14
+    },
+    {
+        "buyerId": 14,
+        "propertyId": 9,
+        "time": "2023-03-13T14:30:00.022Z",
+        "id": 15
+    },
+    {
+        "buyerId": 15,
+        "propertyId": 11,
+        "time": "2023-03-14T16:15:00.020Z",
+        "id": 16
+    },
+    {
+        "buyerId": 2,
+        "propertyId": 1,
+        "time": "2023-12-31T00:00:00.000Z",
+        "id": 17
+    }
+]
