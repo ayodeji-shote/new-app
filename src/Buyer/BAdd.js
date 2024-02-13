@@ -23,6 +23,7 @@ function BAdd() {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
                 navigate(`/BView`);
                 setBuyer(data);
 

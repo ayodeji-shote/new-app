@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 describe("Navigation home page", () => {
     beforeEach('Runs each of the intercepts before the page loads ',()=>{

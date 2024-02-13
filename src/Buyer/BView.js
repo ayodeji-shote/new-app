@@ -68,7 +68,7 @@ case "SET":
                 state={{
                   buyers: buyerList
                 }}
-              >
+              data-cy="BuyerAdd">
                 {" "}
                 Add a Buyer
               </Link>
@@ -79,7 +79,7 @@ case "SET":
         <div className="row">
           {buyerList.map((buyer) => {
             return (
-              <div className="col-md-4 mb-4 col-md-offset-3">
+              <div key={buyer.id} className="col-md-4 mb-4 col-md-offset-3" data-cy = 'buyerdetails'>
                 <ul className="mx-2 boviewsBoarderRadius">
                   <div className="img">
                     <img
